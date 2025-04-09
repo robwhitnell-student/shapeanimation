@@ -57,7 +57,8 @@ public class ShapeList extends ArrayList<Shape> {
                     double radius = random.nextDouble() * Math.min(width, height) / 10; // random radius
                     double centerX = random.nextDouble() * (width - radius * 2) + radius; // random center x
                     double centerY = random.nextDouble() * (height - radius * 2) + radius; // random center y
-                    shape = new javafx.scene.shape.Circle(centerX, centerY, radius);
+                    shape = new MovingCircle(centerX, centerY, radius,
+                    random.nextDouble() * 2 - 1, random.nextDouble() * 2 - 1); // random dx and dy
                     break;
                 case 1: // rectangle
                     double rectWidth = random.nextDouble() * (width / 5); // random width
